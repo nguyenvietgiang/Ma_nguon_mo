@@ -18,31 +18,36 @@
 
                     <div class="col-lg-6 mb-5 mb-lg-0">
                         <div class="card-body py-5 px-md-5">
-                            <form>
-                                <!-- Name input -->
+                            {% if message %}
+                                <p style="color: red;">{{ message }}</p>
+                            {% endif %}
+
+                            <form method="post">
+                                {% csrf_token %}
+                                <!-- Username input -->
                                 <div class="form-outline mb-4">
-                                    <input id="form3Example3" class="form-control" />
-                                    <label class="form-label" for="form3Example3">Tên Đăng Nhập</label>
+                                    <input type="text" id="username" name="username" class="form-control" required>
+                                    <label class="form-label" for="username">Tên Đăng Nhập</label>
                                 </div>
-
-
-                                <!-- Email input -->
-                                <div class="form-outline mb-4">
-                                    <input type="email" id="form3Example3" class="form-control" />
-                                    <label class="form-label" for="form3Example3">Email liên hệ</label>
-                                </div>
-
+                           
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
-                                    <input type="password" id="form3Example4" class="form-control" />
-                                    <label class="form-label" for="form3Example4">Mật Khẩu</label>
+                                    <input type="password" id="password1" name="password1" class="form-control" required>
+                                    <label class="form-label" for="password1">Mật Khẩu</label>
                                 </div>
-
+                            
+                                <!-- Confirm Password input -->
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="password2" name="password2" class="form-control" required>
+                                    <label class="form-label" for="password2">Xác Nhận Mật Khẩu</label>
+                                </div>
+                            
                                 <!-- Submit button -->
                                 <button type="submit" class="btn btn-primary btn-block mb-4">
                                     Đăng Ký Ngay
                                 </button>
                             </form>
+                            
                         </div>
                     </div>
                 </div>

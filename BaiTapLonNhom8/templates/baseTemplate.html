@@ -51,12 +51,23 @@
                     <li class="nav-item">
                        <a class="nav-link" href="{% url 'contact' %}">Liên Hệ</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <!-- Hiển thị nút đăng xuất nếu người dùng đã đăng nhập -->
                     <li class="nav-item">
-                       <a class="nav-link" href="{% url 'login' %}">Đăng Nhập</a>
+                     <a class="nav-link" href="">Xin chào, {{ user.username }} </a>
                     </li>
                     <li class="nav-item">
-                       <a class="nav-link" href="{% url 'register' %}">Đăng Ký</a>
+                        <a class="nav-link" href="{% url 'logout' %}">Đăng Xuất</a>
                     </li>
+                {% else %}
+                    <!-- Hiển thị nút đăng nhập và đăng ký nếu người dùng chưa đăng nhập -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Đăng Nhập</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Đăng Ký</a>
+                    </li>
+                {% endif %}
                  </ul>
               </div>
            </nav>
