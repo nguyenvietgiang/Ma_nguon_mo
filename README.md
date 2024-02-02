@@ -1,6 +1,13 @@
-# Mã nguồn mở
+# Mã nguồn mở (Nhóm 8)
+**Đảm bảo đã cài đặt Python và Django để chạy**
+## Yêu cầu hệ thống
+
+- Python version 
+- MongoDB
+- Any compatible code  (Visual Studio Code, Visual Studio, etc.)
+
 ## Chạy dự án
-  **Khởi chạy server**: Trong thư mục dự án, chạy lệnh sau để khởi chạy server Django trên cổng 8888:
+  **Khởi chạy server**: Trong thư mục dự án (tại: BaiTapLonNhom8) mở terminal và chạy lệnh sau để khởi chạy server Django trên cổng 8888:
 
     ```
     python manage.py runserver 8888

@@ -18,8 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from home import views as home
 from login import views as login
+from register import views as register
+from contact import views as contact
+from blog import views as blog
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home.get_home, name='home'),
     path('login/',login.get_login, name='login'),
+    path('register/',register.get_register, name='register'),
+    path('contact/',contact.get_contact, name='contact'),
+    path('blog/',blog.get_blog, name='blog'),
 ]
