@@ -1,0 +1,12 @@
+{% extends "baseTemplate.html" %}
+
+{% block content %}
+<div>
+    <h1>Đăng Bài Viết Mới</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Đăng Bài Viết</button>
+    </form>
+</div>
+{% endblock %}
