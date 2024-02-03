@@ -1,50 +1,40 @@
 {% extends "baseTemplate.html" %}
-
-{% load static%}
-
 {% block content %}
 
- <!-- recent section start --> 
- <div class="about_section layout_padding">
-    <div class="container">
-       <div class="row">
-          <div class="col-lg-8 col-sm-12">
-            <div class="card rounded">
-                <div class="about_img"><img src="{% static 'images/img-10.png' %}" alt=""></div>
-                <p class="post_text">Post By : 09/06/2019</p>
-                <h2 class="most_text">Most Awesome Blue Lake With Snow <br>foreste</h2>
-                <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
-                <div class="social_icon_main">
-                    <div class="read_bt"><a href="#">Read More</a></div>
-                </div>
-            </div>            
-          </div>
-          <div class="col-lg-4 col-sm-12">
-             <div class="newsletter_main">
-                <h1 class="recent_taital">Recent post</h1>
-                <div class="recent_box">
-                   <div class="recent_left">
-                      <div class="image_6"><img src="{% static 'images/img-6.png' %}" alt=""></div>
+<!-- recent section start --> 
+<div class="about_section layout_padding">
+   <div class="container">
+       <!-- Thanh tìm kiếm -->
+       <div class="row justify-content-center mb-4"> <!-- Thêm class mb-4 để tạo khoảng cách dưới cho thanh tìm kiếm -->
+         <div class="col-lg-6">
+             <form method="get" class="d-flex">
+                 <input type="text" name="q" class="form-control me-2" placeholder="Tìm kiếm...">
+                 <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+             </form>
+         </div>
+     </div>     
+       <!-- Danh sách các bài viết -->
+       <div class="row justify-content-center">
+           {% for blog in blogs %}
+           <div class="col-lg-8 col-sm-12 mb-4">
+               <div class="card rounded">
+                   <div class="card mb-3">
+                     <img src="/media/{{ blog.thumnail }}" class="card-img-top" alt="...">
+                     <div class="card-body">
+                        <a href="{% url 'blog_detail' blog_id=blog.id %}"> <h5 class="card-title">{{ blog.title }}</h5></a>
+                       <p class="card-text"><small class="text-muted">Đăng bởi: {{ blog.user.username }}</small></p>
+                     </div>
                    </div>
-                   <div class="recent_right">
-                      <h3 class="consectetur_text">Consectetur adipiscing</h3>
-                      <p class="dolor_text">ipsum dolor sit amet, consectetur adipiscing </p>
-                   </div>
-                </div>
-                <div class="recent_box">
-                   <div class="recent_left">
-                      <div class="image_6"><img src="{% static 'images/img-7.png' %}" alt=""></div>
-                   </div>
-                   <div class="recent_right">
-                      <h3 class="consectetur_text">Consectetur adipiscing</h3>
-                      <p class="dolor_text">ipsum dolor sit amet, consectetur adipiscing </p>
-                   </div>
-                </div>
-             </div>
-          </div>
+               </div> 
+           </div>
+           {% endfor %}
        </div>
-    </div>
- </div>
- <!-- recent section end --> 
+       <div class="col-lg-6 text-lg-end">
+         <a href="{% url 'create_blog' %}" class="btn btn-success">Tạo bài viết</a>
+     </div>
+   </div>
+</div>
+
 
 {% endblock %}
+

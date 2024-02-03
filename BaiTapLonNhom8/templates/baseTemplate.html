@@ -84,16 +84,17 @@
            <div class="footer_menu">
               <ul>
                  <li><a href="{% url 'home' %}">Trang Chủ</a></li>
-                 <li><a href="blog.html">Tin Tức</a></li>
+                 <li><a href="{% url 'blog' %}">Tin Tức</a></li>
                  <li><a href="{% url 'contact' %}">Liên hệ</a></li>
+                 <li><a href="/admin">Quản trị</a></li>
               </ul>
            </div>
            <div class="contact_menu">
               <ul>
                  <li><a href="#"><img src="{% static 'images/call-icon.png' %}" alt="call"></a></li>
                  <li><a href="#">SDT : +84 946783295</a></li>
-                 <li><a href="blog.html"><img src="{% static 'images/mail-icon.png' %}" alt="email"></a></li>
-                 <li><a href="features.html">Nhom_8_mnm@gmail.com</a></li>
+                 <li><a href="#"><img src="{% static 'images/mail-icon.png' %}" alt="email"></a></li>
+                 <li><a href="#">Nhom_8_mnm@gmail.com</a></li>
               </ul>
            </div>
         </div>
@@ -111,5 +112,10 @@
     <!-- javascript --> 
     <script src="{% static 'js/owl.carousel.js' %}"></script>
     <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+    <script>
+      CKEDITOR.replace('id_detail');
+  </script>
 </body>
 </html>

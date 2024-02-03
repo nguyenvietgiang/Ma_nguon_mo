@@ -4,9 +4,16 @@ from .models import Blog
 from .forms import BlogForm
 
 def get_blog(request):
-    return render(request, 'blog.html')
+    query = request.GET.get('q')
+    if query:
+        # Tìm kiếm các bài viết có tiêu đề chứa từ khóa tìm kiếm
+        blogs = Blog.objects.filter(title__icontains=query)
+    else:
+        blogs = Blog.objects.all()
 
-@login_required(login_url='login')  # Thêm decorator này
+    return render(request, 'blog.html', {'blogs': blogs, 'query': query}) 
+
+@login_required(login_url='login') 
 def create_blog(request):
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
@@ -15,7 +22,7 @@ def create_blog(request):
             blog = form.save(commit=False)
             blog.user = request.user  # Gán người dùng hiện tại là người tạo bài viết
             blog.save()
-            return redirect('blog_detail', blog_id=blog.id)  # Chuyển hướng đến trang chi tiết bài viết
+            return redirect('blog_detail', blog_id=blog.id)
     else:
         form = BlogForm()
     return render(request, 'create_blog.html', {'form': form})

@@ -1,12 +1,29 @@
 {% extends "baseTemplate.html" %}
 
 {% block content %}
-<div>
-    <h1>Đăng Bài Viết Mới</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Đăng Bài Viết</button>
-    </form>
+<div class="card border-dark rounded-3" style="max-width: 1000px; margin: 0 auto;">
+    <div class="card-body">
+        <h1 class="card-title">Đăng Bài Viết Mới</h1>
+        <form method="post" enctype="multipart/form-data" class="row g-3">
+            {% csrf_token %}
+            <div class="mb-3 col-md-6">
+                <label for="id_title" class="form-label">Tiêu đề</label>
+                {{ form.title }}
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="id_thumnail" class="form-label">Ảnh minh họa</label>
+                {{ form.thumnail }}
+            </div>
+            <div class="mb-3 col-12">
+                <label for="id_detail" class="form-label">Nội dung</label>
+                {{ form.detail }}
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Đăng Bài Viết</button>
+            </div>
+        </form>
+    </div>
 </div>
+
+
 {% endblock %}

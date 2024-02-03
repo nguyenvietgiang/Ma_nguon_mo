@@ -1,11 +1,22 @@
 {% extends "baseTemplate.html" %}
 
-
 {% block content %}
-<div>
-    <h1>{{ blog.title }}</h1>
-    <p>Người đăng: {{ blog.user.username }}</p>
-    <img src="/media/{{ blog.thumnail }}" alt="Ảnh minh họa">
-    <p>{{ blog.detail }}</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h1 class="card-title text-center">{{ blog.title }}</h1>
+                    <p class="text-center">Người đăng: {{ blog.user.username }}</p>
+                    <div class="text-center">
+                        <img src="/media/{{ blog.thumnail }}" class="img-fluid mb-3" alt="Ảnh minh họa">
+                    </div>
+                    <div class="card-text">
+                        {{ blog.detail | safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
