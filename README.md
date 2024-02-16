@@ -3,6 +3,7 @@
 - Nguyễn Đình Việt Anh
 - Trần Thị Hạ
 - Phạm Thị Thu Hiền
+---
 **Đảm bảo đã cài đặt Python và Django để chạy**
 ## Yêu cầu hệ thống
 
@@ -10,7 +11,7 @@
 - DataBase: SQLite
 - Có thể dùng:  (Visual Studio Code, Visual Studio, etc.)
 
-## Các câu lệnh áp dụng cho tất cả các câu ở dưới đây (thay đổi nếu đang sử dụng Python3, dùng python3 thay vì python) 
+## Các câu lệnh dùng cho tất cả VD ở dưới đây trong terminal (thay đổi nếu đang sử dụng Python3, dùng python3 thay vì python) 
 
 ## Hướng dẫn chạy dự án
   **Khởi chạy server**: Trong thư mục dự án (tại: BaiTapLonNhom8) mở terminal và chạy lệnh sau để khởi chạy server Django trên cổng 8888:
@@ -52,3 +53,4 @@
    python manage.py migrate
   ```
 ---
+**Sau đó có thể chạy app như đoạn code ở trên**:
