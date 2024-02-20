@@ -11,6 +11,11 @@
 - DataBase: SQLite
 - Có thể dùng:  (Visual Studio Code, Visual Studio, etc.)
 
+## Hướng dẫn cài đặt
+
+- Clone bằng git hoặc tải file zip sau đó giải nén.
+- Sử dùng file vừa tải về trỏ vào BaiTapLonNhom8 và làm theo hướng dẫn bên dưới.
+
 ## Các câu lệnh dùng cho tất cả VD ở dưới đây trong terminal (thay đổi nếu đang sử dụng Python3, dùng python3 thay vì python) 
 
 ## Hướng dẫn chạy dự án

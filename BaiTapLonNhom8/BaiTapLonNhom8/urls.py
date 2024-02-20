@@ -24,7 +24,7 @@ from blog import views as blog
 from my_profile import views as myProfile
 from django.conf.urls.static import static
 from django.conf import settings
-
+from blogapp import views as blogapp
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,4 +38,5 @@ urlpatterns = [
     path('blog/create/', blog.create_blog, name='create_blog'),
     path('blog/<int:blog_id>/', blog.blog_detail, name='blog_detail'),
     path('profile/', myProfile.user_profile, name='profile'),
+    path('blogapp/', blogapp.get_blogapp, name='blog_app'),
 ]+ static(settings.MEDIA_URL, document_root =settings.MEDIA_ROOT)
