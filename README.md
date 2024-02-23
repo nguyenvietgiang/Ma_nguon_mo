@@ -18,6 +18,11 @@
 
 ## Các câu lệnh dùng cho tất cả VD ở dưới đây trong terminal (thay đổi nếu đang sử dụng Python3, dùng python3 thay vì python) 
 
+## Chạy lệnh sau để tải thư viện custom giao diện admin
+  ```
+   pip install django-jazzmin
+  ```
+
 ## Hướng dẫn chạy dự án
   **Khởi chạy server**: Trong thư mục dự án (tại: BaiTapLonNhom8) mở terminal và chạy lệnh sau để khởi chạy server Django trên cổng 8888:
 
