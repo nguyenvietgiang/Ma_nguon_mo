@@ -25,10 +25,12 @@ from my_profile import views as myProfile
 from django.conf.urls.static import static
 from django.conf import settings
 from blogapp import views as blogapp
+from loading import views as loading
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',home.get_home, name='home'),
+    path('',loading.get_loading, name='loading'),
+    path('home/',home.get_home, name='home'),
     path('login/',login.get_login, name='login'),
     path('logout/', login.logout_view, name='logout'),
     path('login/authenticate/', login.authenticate_user, name='authenticate_user'),

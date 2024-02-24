@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Loading</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .logo {
+            width: 200px; 
+            height: auto; 
+            animation: rotate 1.5s linear infinite; /* Áp dụng animation */
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg); /* Bắt đầu từ góc 0 độ */
+            }
+            to {
+                transform: rotate(360deg); /* Kết thúc ở góc 360 độ */
+            }
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <img class="logo" src="{% static 'images/logo.png' %}" alt="logo">
+    <script>
+        setTimeout(function() {
+            window.location.href = "home/";
+        }, 2000);
+    </script>
+</body>
+</html>
