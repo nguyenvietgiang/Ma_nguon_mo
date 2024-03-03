@@ -18,7 +18,7 @@
 
 ## Các câu lệnh dùng cho tất cả VD ở dưới đây trong terminal (thay đổi nếu đang sử dụng Python3, dùng python3 thay vì python) 
 
-## Chạy lệnh sau để tải thư viện custom giao diện admin
+## Chạy lệnh sau để tải thư viện custom giao diện admin (Trong trường hợp tải lỗi thì vào appsetting để xóa Jazzmin và setting của nó)
   ```
    pip install django-jazzmin
   ```

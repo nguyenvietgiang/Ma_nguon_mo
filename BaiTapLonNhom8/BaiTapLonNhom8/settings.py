@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
+    'jazzmin', # Sử dụng Jazzmin
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +47,11 @@ INSTALLED_APPS = [
     'blogapp',
     'loading',
 ]
+
+# Setting cho Jazzim
+JAZZMIN_SETTINGS = {
+    "site_logo": "images/logo.png", 
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

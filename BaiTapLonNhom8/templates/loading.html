@@ -10,25 +10,50 @@
             height: 100vh;
             margin: 0;
             overflow: hidden;
+            background-color: #f4f4f4; /* Màu nền */
+        }
+        .loader {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+        .loader:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 6px solid #ccc; /* Màu của vòng tròn */
+            border-top-color: #007bff; /* Màu của phần đầu tiên của vòng */
+            animation: spin 1.5s linear infinite; /* Áp dụng animation */
+        }
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); } /* Bắt đầu từ góc 0 độ */
+            100% { transform: translate(-50%, -50%) rotate(360deg); } /* Quay đến góc 360 độ */
+        }
+        .logo-container {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         .logo {
-            width: 200px; 
-            height: auto; 
-            animation: rotate 1.5s linear infinite; /* Áp dụng animation */
-        }
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg); /* Bắt đầu từ góc 0 độ */
-            }
-            to {
-                transform: rotate(360deg); /* Kết thúc ở góc 360 độ */
-            }
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
     {% load static %}
-    <img class="logo" src="{% static 'images/logo.png' %}" alt="logo">
+    <div class="loader"></div>
+    <div class="logo-container">
+        <!-- Logo của bạn -->
+        <img class="logo" src="{% static 'images/logo.png' %}" alt="logo">
+    </div>
     <script>
         setTimeout(function() {
             window.location.href = "home/";
@@ -36,3 +61,5 @@
     </script>
 </body>
 </html>
+
+
