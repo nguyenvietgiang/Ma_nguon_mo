@@ -39,6 +39,7 @@ urlpatterns = [
     path('blog/',blog.get_blog, name='blog'),
     path('blog/create/', blog.create_blog, name='create_blog'),
     path('blog/<int:blog_id>/', blog.blog_detail, name='blog_detail'),
+    path('blog/<int:blog_id>/add_comment/', blog.add_comment, name='add_comment'),
     path('profile/', myProfile.user_profile, name='profile'),
     path('blogapp/', blogapp.get_blogapp, name='blog_app'),
 ]+ static(settings.MEDIA_URL, document_root =settings.MEDIA_ROOT)
