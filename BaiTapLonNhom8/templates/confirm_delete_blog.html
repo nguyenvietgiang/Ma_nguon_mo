@@ -1,0 +1,11 @@
+{% extends "baseTemplate.html" %} {% block content %}
+
+<h2>Xác nhận xóa bài viết</h2>
+<p>Bạn có chắc chắn muốn xóa bài viết "{{ blog.title }}"?</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Xác nhận</button>
+  <a href="{% url 'profile' %}" class="btn btn-secondary">Hủy</a>
+</form>
+
+{% endblock %}
