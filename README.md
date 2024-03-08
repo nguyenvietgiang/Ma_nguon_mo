@@ -66,48 +66,61 @@ source myenv/bin/activate
 
 ## Tạo một tài khoản quản trị mới thông qua
 
-````
+```
 
     python manage.py createsuperuser
 
 ```
 
 ---
+
 ## Hoặc sử dụng với tài khoản: vietgiang, mật khẩu: vip1111.
 
- Mở trình duyệt và truy cập địa chỉ [http://localhost:8888/](http://localhost:8888/).
- Mở trình duyệt và truy cập địa chỉ trang quản trị [http://localhost:8888/admin](http://localhost:8888/admin).
-
+Mở trình duyệt và truy cập địa chỉ [http://localhost:8888/](http://localhost:8888/).
+Mở trình duyệt và truy cập địa chỉ trang quản trị [http://localhost:8888/admin](http://localhost:8888/admin).
 
 ## Các câu lệnh cần biết để thao tác cơ bản với Django
 
 **Tạo dự án(projectname thay bằng tên dự án)**:
+
 ```
 
     python -m django startproject projectname
 
 ```
+
 ---
+
 **Tạo ứng dụng con(your_app_name thay bằng tên app)**:
+
 ```
 
     python manage.py startapp your_app_name
 
 ```
+
 ---
+
 **Tạo các bảng trong cơ sở dữ liệu**:
+
 ```
 
     python manage.py makemigrations
 
 ```
+
 ---
+
 ```
 
 python manage.py migrate
 
 ```
+
 ---
+
 **Sau đó có thể chạy app như đoạn code ở trên**:
+
 ```
-````
+
+```
