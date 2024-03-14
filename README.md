@@ -64,7 +64,7 @@ source myenv/bin/activate
 
 ---
 
-## Tạo một tài khoản quản trị mới thông qua
+## Tạo một tài khoản quản trị mới thông qua day
 
 ```
 
