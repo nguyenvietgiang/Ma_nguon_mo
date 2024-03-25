@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
+from allauth.socialaccount.models import SocialAccount
 
 def get_login(request):
     # Hiển thị trang đăng nhập
@@ -23,3 +24,10 @@ def logout_view(request):
     # Đăng xuất người dùng
     logout(request)
     return redirect('login')
+
+def get_facebook(request):
+    return render(request,'facebookLogin.html') 
+
+def login_with_facebook(request):
+    # Chuyển hướng đến trang đăng nhập bằng Facebook của django-allauth
+    return redirect('socialaccount_login', 'facebook')

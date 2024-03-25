@@ -26,6 +26,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from blogapp import views as blogapp
 from loading import views as loading
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -44,4 +45,7 @@ urlpatterns = [
     path('blog/<int:blog_id>/add_comment/', blog.add_comment, name='add_comment'),
     path('profile/', myProfile.user_profile, name='profile'),
     path('blogapp/', blogapp.get_blogapp, name='blog_app'),
+    path('accounts/', include('allauth.urls')),
+    path('login_with_facebook/', login.login_with_facebook, name='login_with_facebook'),
+    path('facebook/', login.get_facebook, name='facebook'),
 ]+ static(settings.MEDIA_URL, document_root =settings.MEDIA_ROOT)

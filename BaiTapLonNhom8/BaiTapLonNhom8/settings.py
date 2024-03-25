@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Cấu hình để đăng nhập với bên thứ 3 (Facebook hoặc Google)
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 # Application definition
 
@@ -46,6 +51,11 @@ INSTALLED_APPS = [
     'my_profile',
     'blogapp',
     'loading',
+     # Sử dụng authen cho bên thứ 3 (facebook hoặc google)
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
 ]
 
 # Setting cho Jazzim
@@ -61,6 +71,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #cấu hình cho bên thứ 3
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'BaiTapLonNhom8.urls'
@@ -79,6 +91,8 @@ TEMPLATES = [
             ],
         },
     },
+
+    
 ]
 
 WSGI_APPLICATION = 'BaiTapLonNhom8.wsgi.application'
@@ -129,6 +143,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
