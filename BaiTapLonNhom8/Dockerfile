@@ -1,4 +1,3 @@
-# Sử dụng một base image chứa Python
 FROM python:3.10.4
 
 # Thiết lập thư mục làm việc của ứng dụng
