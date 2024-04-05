@@ -1,4 +1,4 @@
-# Mã nguồn mở (Nhóm 8)
+# Mã nguồn mở (Nhóm 8) Blog web
 
 - Nguyễn Việt Giang
 - Nguyễn Đình Việt Anh
