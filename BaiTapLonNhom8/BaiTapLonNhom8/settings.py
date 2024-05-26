@@ -25,7 +25,7 @@ SECRET_KEY = 'daylakhoabimatcuatoi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Cấu hình để đăng nhập với bên thứ 3 (Facebook hoặc Google)
 AUTHENTICATION_BACKENDS = [
@@ -61,6 +61,7 @@ INSTALLED_APPS = [
 # Setting cho Jazzim
 JAZZMIN_SETTINGS = {
     "site_logo": "images/logo.png", 
+    "custom_css": "css/custom_jazzmin.css",
 }
 
 MIDDLEWARE = [
