@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Django",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/BaiTapLonNhom8/manage.py",
+      "args": [
+        "runserver",
+        "8000" // Bạn có thể thay đổi cổng nếu cần
+      ],
+      "django": true,
+      "justMyCode": true,
+      "env": {
+        "DJANGO_SETTINGS_MODULE": "BaiTapLonNhom8.settings"
+      },
+      "console": "integratedTerminal"
+    }
+  ]
+}
