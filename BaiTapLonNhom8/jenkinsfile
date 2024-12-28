@@ -1,6 +1,18 @@
 pipeline {
     agent any
     stages {
+        stage('Setup Infrastructure') {
+            steps {
+                script {
+                    // Chạy Terraform
+                    sh '''
+                    terraform init
+                    terraform plan -out=tfplan
+                    terraform apply -auto-approve tfplan
+                    '''
+                }
+            }
+        }
         stage('Build') {
             steps {
                 git 'https://github.com/nguyenvietgiang/Ma_nguon_mo.git'
